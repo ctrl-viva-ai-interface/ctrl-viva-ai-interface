@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRL VIVA AI - Analista de Briefing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-robot"></i> CTRL VIVA AI</h1>
+        <h2>Analista de Briefing Inteligente</h2>
+
+        <div class="section-briefing">
+            <h3>Detalhes do Evento</h3>
+            <div class="form-group">
+                <label for="tipoEvento">Tipo de Evento:</label>
+                <input type="text" id="tipoEvento" value="Inauguração">
+            </div>
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" value="MRS Logística">
+            </div>
+            <div class="form-group">
+                <label for="localEvento">Local do Evento:</label>
+                <input type="text" id="localEvento" value="Pederneiras - Campo Aberto">
+            </div>
+            <div class="form-group">
+                <label for="numPessoas">Número de Pessoas:</label>
+                <input type="number" id="numPessoas" value="150">
+            </div>
+            <div class="form-group">
+                <label for="detalhesAdicionais">Detalhes Adicionais:</label>
+                <textarea id="detalhesAdicionais">Evento em terreno, durante a manhã e tarde. Precisa de palco para apresentação, microfones, café da manhã. Foco em segurança.</textarea>
+            </div>
+            <button id="gerarItensBtn" class="btn btn-primary"><i class="fas fa-magic"></i> Analisar Briefing e Sugerir Itens</button>
+        </div>
+
+        <div class="section-results">
+            <h3>Itens Sugeridos pela IA</h3>
+            <p id="loadingMessage" style="display:none;"><i class="fas fa-spinner fa-spin"></i> A IA está pensando...</p>
+            <p id="errorMessage" class="error-message" style="display:none;"></p>
+
+            <table id="itemsTable">
+                <thead>
+                    <tr>
+                        <th>DESPESA</th>
+                        <th>CATEGORIA</th>
+                        <th>SUBCATEGORIA</th>
+                        <th>FORNECEDOR</th>
+                        <th>UNIDADE DE MEDIDA</th>
+                        <th>QUANTIDADE PREVISTA</th>
+                        <th>VALOR UNITÁRIO</th>
+                        <th>VALOR PREVISTO</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsTableBody">
+                    </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7" class="total-label">TOTAL:</td>
+                        <td id="totalPrevisto">R$ 0,00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <button id="salvarPdfBtn" class="btn btn-secondary" style="display:none;"><i class="fas fa-file-pdf"></i> Salvar Proposta como PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
